@@ -1,5 +1,4 @@
 
-![header](https://user-images.githubusercontent.com/16992394/35495122-0022aab8-04c8-11e8-8d3c-410aafd331d3.jpg)
 
 # Start PHP Framework
 Start is a MVC PHP Framework to kickstart projects rapidly, it's designed to be simple, configurable, modular, decoupled, extensible and lightweight to make it easier to build better and easily maintained PHP code.
@@ -55,7 +54,9 @@ Start comes with a template project with a simple authentication system to kicks
 3. Copy Start PHP Framework folder contents to `C:\xampp\htdocs` for windows or `/Applications/XAMPP/xamppfiles/htdocs` for mac.
 4. **OR** Configure XAMPP's Apache's `httpd.conf` Directory root to Start's Directory, see instructions: [Here](https://stackoverflow.com/questions/18902887/how-to-configuring-a-xampp-web-server-for-different-root-directory "Stackoverflow").
 5. Open XAMPP and start both Apache and Mysql.
-6. Go to [localhost](http://localhost "Go to Localhost") and start developing!
+6. Run Composer Install
+7. Go to [localhost](http://localhost "Go to Localhost") and start developing!
+
 
 
 * To Use the pre-made Login/Register, and you're **using SQL** (not Mongo) you must create the database and tables in SQL.
@@ -74,7 +75,6 @@ also replace `Models/UserRepository.php` with `Models\.disabled.mongo.userreposi
  
  
 
-![homepage](https://user-images.githubusercontent.com/16992394/35495101-d3b9e9e6-04c7-11e8-8afd-dbae75cf8a1b.jpg)
  
 ___________
 
@@ -402,7 +402,7 @@ public static function addSuccessAlert($successAlert);
     - **Info Alerts**, used in displaying information, hint or a notice.
     - **SuccessAlert**, used in displaying success operations.
     
-![alerts](https://user-images.githubusercontent.com/16992394/35495100-d3191b06-04c7-11e8-88a2-cbcc6ee5bdcd.jpg)
+
     
  ___________     
     
@@ -457,8 +457,6 @@ and any CSS/JS that are used in this layout must be included in layout.html such
     </body>
 </html>
 ```
-
-![layout](https://user-images.githubusercontent.com/16992394/35495104-da074ec4-04c7-11e8-915b-ec0e224a352f.jpg)
 
 ### 5.2 Views
 A view is the output of a web controller's action, a view has a $data assoc array which is passed by the controller, It is used to pass data between controller and view.
