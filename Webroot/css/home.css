@@ -1,0 +1,91 @@
+/*
+    This should contain all the css used in the homepage
+ */
+
+html,body {
+    height:100%;
+}
+
+h1 {
+    font-family: Arial,sans-serif;
+    font-size:80px;
+    color:#B9CAC4;
+}
+
+.lead {
+    color: #50b497;
+}
+
+Custom container
+.container-full {
+    margin: 0 auto;
+    width: 100%;
+    min-height:60%;
+    max-height:70%;
+    background-color: #0C2032;
+    color:#eee;
+    overflow:hidden;
+}
+
+.container-full a {
+    color:#efefef;
+    text-decoration:none;
+}
+
+.v-center {
+    margin-top:7%;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Exo", sans-serif;
+	color: #fff;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab );
+	background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite;
+	        animation: gradientBG 10s ease infinite;
+}
+/* .container {
+	width: 100%;
+	position: absolute;
+	top: 35%;
+	text-align: center;
+} */
+/* .row {
+	width: 100%;
+	position: absolute;
+	top: 35%;
+	text-align: center;
+} */
+
+h1 {
+	font-weight: 900;
+}
+a {
+	text-decoration: none;
+	color: #212121;
+}
+@-webkit-keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

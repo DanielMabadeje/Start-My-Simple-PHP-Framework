@@ -1,0 +1,15 @@
+{
+    "require" :{
+        "symfony/console": "2.6.7"
+    },
+    "autoload": {
+        "classmap": ["Vendor/Commands"],
+        "psr-4": {
+            "App\\": ".",
+            "Modules\\":"modules/"
+          }
+      },
+      "config": {
+        "vendor-dir": "Vendor"
+      }
+}
