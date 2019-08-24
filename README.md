@@ -35,10 +35,11 @@ Start comes with a template project with a simple authentication system to kicks
     - [1. Project Structure](#1--project-structure)
     - [2. Routing](#2--routing)
     - [3. Controllers](#3--controllers)
-    - [4. Session & Alerts](#4--session-and-alerts)
-    - [5. Layouts and Views](#5--layouts-and-views)
-    - [6. Exception & Error Handler](#6--exception-and-error-handler)
-    - [7. Database Classes](#7--database-classes)
+    - [4. Models](#4--models)
+    - [5. Session & Alerts](#4--session-and-alerts)
+    - [6. Layouts and Views](#5--layouts-and-views)
+    - [7. Exception & Error Handler](#6--exception-and-error-handler)
+    - [8. Database Classes](#7--database-classes)
 - [License](#license)
 
 
@@ -60,7 +61,7 @@ Start comes with a template project with a simple authentication system to kicks
 
 
 * To Use the pre-made Login/Register, and you're **using SQL** (not Mongo) you must create the database and tables in SQL.
-    - Go to `http://localhost/phpmyadmin` and execute the query in `sql_database_script.sql` that exists in the root directory. 
+    - Go to `http://localhost/phpmyadmin` and execute the query in `sql_database_script.sql` that exists in the database directory. 
 
 * To Use the pre-made Login/Register, and you want to be **using MongoDB** you must install `mongodb extension` and `MongoDB PHP Library` using composer, instructions [Here](#mongodb-installation).
 also replace `Models/UserRepository.php` with `Models\.disabled.mongo.userrepository.class.php` to use the MongoDB version.
@@ -90,8 +91,10 @@ The Project Structure follows namespaced PSR-4 specifications.
 +---Controllers         <- Contains a Dir for each Route each contains this Route's Controllers.  
 +---Core                <- Contains Core Classes for the framework
 +---Logs                <- Contains Logs created by the scripts (e.g Exception Handler logs)
-+---Models              <- Contains Models (can be sub-directoried using namespaces using PSR-4 specs. 
-+---Utilities           <- Contains Utility Classes. 
++---Models              <- Contains Models (can be sub-directoried using namespaces using PSR-4 specs.  
++---Modules              <- Contains Default Modules (can be sub-directoried using namespaces using PSR-4 specs.
++---Repositories         <- incase repositories are needed (can be sub-directoried using namespaces using PSR-4 specs.
++---Database              <- for sql queries .
 +---Vendor              <- Composer's Vendor Dir, contains autoloader code and third-party packeges.        
 +---Views               <- Contains Views, a Dir for each route, each contains a Dir for each Controller.
 |   +---_FullMessages     <- Contains Full Messages HTML designs.
@@ -362,7 +365,13 @@ class AccountController extends WebController {
 ```
 ___________
 
-## 4- Session and Alerts
+## 4- Models
+
+The Models is a class that will manage the interaction with the database 
+To make a new model ..In your Command line, switch to your current directory and say
+php start make:model (your model)
+
+## 5- Session and Alerts
 
 The Session Class is an extensible class that will manage the usage of $_`SESSION` across the programs to enforce single responsibility principle.
 ```php
@@ -406,9 +415,9 @@ public static function addSuccessAlert($successAlert);
     
  ___________     
     
-## 5- Layouts and Views
+## 6- Layouts and Views
 
-### 5.1 Layouts
+### 6.1 Layouts
 
 A Layout is the structure of the HTML webpage, it consists of 5 sections
 
@@ -458,7 +467,7 @@ and any CSS/JS that are used in this layout must be included in layout.html such
 </html>
 ```
 
-### 5.2 Views
+### 6.2 Views
 A view is the output of a web controller's action, a view has a $data assoc array which is passed by the controller, It is used to pass data between controller and view.
 the view location must match the controller path/namespace structure.
 
@@ -488,7 +497,7 @@ the view location must match the controller path/namespace structure.
 
 ___________
 
-## 6- Exception and Error Handler
+## 7- Exception and Error Handler
 - Exception & Error Handler can be Enabled/Disabled in **`Config/config.php`**.
 - Exception & Error handler will convert any error to an ErrorException.
 - If Enabled in configurations, Exception Handler will log any uncaught exceptions or errors.
@@ -496,7 +505,7 @@ ___________
 
 ___________
 
-## 7- Database Classes
+## 8- Database Classes
 Database Helper classes are used to get a singleton instance for Database connections, where connection credentials are store in config files.
 
 #### Classes (in namespace App\Core)
